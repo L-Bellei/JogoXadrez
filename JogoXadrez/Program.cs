@@ -1,5 +1,5 @@
 ﻿using System;
-using Tabuleiro;
+using tabuleiro;
 
 namespace JogoXadrez
 {
@@ -11,7 +11,6 @@ namespace JogoXadrez
             P = new Posicao(3, 4);
 
             Console.WriteLine("Posicao: " + P);
-            Console.WriteLine("Hello World!");
         }
     }
 }
