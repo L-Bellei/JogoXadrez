@@ -17,11 +17,7 @@ namespace JogoXadrez
                     try
                     {
                         Console.Clear();
-                        Tela.imprimirTabuleiro(partida.tab);
-                        Console.WriteLine();
-
-                        Console.WriteLine("Turno: " + partida.turno);
-                        Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+                        Tela.imprimirPartida(partida);
 
                         Console.WriteLine();
                         Console.Write("Origem: ");
@@ -45,6 +41,11 @@ namespace JogoXadrez
                     catch (TabuleiroException e)
                     {
                         Console.WriteLine(e.Message);
+                        Console.ReadLine();
+                    }
+                    catch(FormatException e)
+                    {
+                        Console.WriteLine("Linha ou coluna com valor incorreto!");
                         Console.ReadLine();
                     }
                 }
