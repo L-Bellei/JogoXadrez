@@ -43,14 +43,14 @@ namespace JogoXadrez
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
                     }
-                    catch(FormatException e)
+                    catch(FormatException)
                     {
                         Console.WriteLine("Linha ou coluna com valor incorreto!");
                         Console.ReadLine();
                     }
                 }
-
-                Tela.imprimirTabuleiro(partida.tab);
+                Console.Clear();
+                Tela.imprimirPartida(partida);
             }
             catch (TabuleiroException e)
             {

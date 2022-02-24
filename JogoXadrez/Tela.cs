@@ -15,9 +15,18 @@ namespace JogoXadrez
             imprimirPecasCapturadas(partida);
 
             Console.WriteLine("Turno: " + partida.turno);
-            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+           
+            if (!partida.terminada)
+            {
+                Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
 
-            if (partida.xeque) { Console.WriteLine("XEQUE!"); }
+                if (partida.xeque) { Console.WriteLine("XEQUE!"); }
+            }
+            else
+            {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
+            }
         }
 
         public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
@@ -59,7 +68,7 @@ namespace JogoXadrez
                 }
                 Console.WriteLine();
             }
-            Console.Write   ("  a b c d e f g h");
+            Console.Write("  a b c d e f g h");
         }
         public static void imprimirTabuleiro(Tabuleiro tab, bool[,] posicoesPossiveis)
         {
